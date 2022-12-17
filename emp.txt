@@ -1,0 +1,24 @@
+create table employee (empid int primary key,empname varchar(50) not null,department varchar(60) not null, contactno bigint unique,emailid varchar(100))
+
+insert into employee values (101,'qwe','sale',1234567891,'qwe@gmail.com')
+insert into employee values (102,'ert','store',1234567892,'ert@gmail.com')
+insert into employee values (103,'tyu','godown',1234567893,'tyu@gmail.com')
+insert into employee values (104,'uio','sale',1234567894,'uio@gmail.com')
+
+select * from employee
+
+create table empsalary (empid int references employee(empid),salary int not null,permanent varchar(3))
+
+insert into empsalary values (101,50000,'yes')
+insert into empsalary values (102,55000,'no')
+insert into empsalary values (103,56000,'yes')
+insert into empsalary values (104,57000,'no')
+
+select * from empsalary
+
+
+select count (salary) from empsalary where permanent = 'yes' and salary > 50000
+select * from employee where emailid like '%gmail.com'
+select * from employee where department in ('sale','store')
+select sum (salary) from empsalary where permanent = 'yes' 
+select * from employee where empname like '%t'
