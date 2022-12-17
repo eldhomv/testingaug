@@ -22,3 +22,6 @@ select * from employee where emailid like '%gmail.com'
 select * from employee where department in ('sale','store')
 select sum (salary) from empsalary where permanent = 'yes' 
 select * from employee where empname like '%t'
+
+
+qwertyuioplkjhgfdsa
